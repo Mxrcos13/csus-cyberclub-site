@@ -1,0 +1,7 @@
+Please save the Sacramento State Cyber Security Club logo as:
+public/logo.png
+
+The website has been configured to use this logo in:
+- Header navigation
+- Homepage hero section
+- Favicon (optional)

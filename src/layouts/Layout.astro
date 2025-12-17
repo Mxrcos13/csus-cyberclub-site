@@ -1,0 +1,35 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Sacramento State's premier cybersecurity club - Learn through hands-on challenges and CTF writeups" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | CyberClub</title>
+  </head>
+  <body>
+    <Header />
+    <main class="min-h-screen">
+      <slot />
+    </main>
+    <footer class="bg-dark-forest text-white py-8 mt-16">
+      <div class="container mx-auto px-4 text-center">
+        <p class="text-pale-gold text-lg font-semibold">Sacramento State CyberClub</p>
+        <p class="mt-2 text-sm">Building the next generation of cybersecurity professionals</p>
+      </div>
+    </footer>
+  </body>
+</html>

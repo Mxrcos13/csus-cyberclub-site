@@ -1,0 +1,125 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact" description="Get in touch with CyberClub">
+  <section class="py-16">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h1 class="text-4xl font-bold mb-8 text-forest-green">Get In Touch</h1>
+
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Contact Information -->
+        <div>
+          <h2 class="text-2xl font-bold text-forest-green mb-6">Contact Information</h2>
+
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div class="text-light-gold text-2xl mr-4 mt-1">📧</div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">Email</h3>
+                <a href="mailto:contact@cyberclub.edu" class="text-forest-green hover:text-dark-forest">
+                  contact@cyberclub.edu
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="text-light-gold text-2xl mr-4 mt-1">💬</div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">Discord</h3>
+                <p class="text-gray-600">Join our community server for real-time discussions</p>
+                <a href="https://discord.gg/yeBQJuk3yf" target="_blank" rel="noopener noreferrer" class="text-forest-green hover:text-dark-forest">
+                  discord.gg/yeBQJuk3yf
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="text-light-gold text-2xl mr-4 mt-1">🐙</div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">GitHub</h3>
+                <p class="text-gray-600">Check out our projects and CTF solutions</p>
+                <a href="https://github.com/cyberclub" class="text-forest-green hover:text-dark-forest">
+                  github.com/cyberclub
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="text-light-gold text-2xl mr-4 mt-1">📍</div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">Office Location</h3>
+                <p class="text-gray-600">
+                  Student Organizations Building<br>
+                  Room 103<br>
+                  Open Hours: Mon-Fri, 3:00 PM - 6:00 PM
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 bg-pale-gold border-l-4 border-light-gold p-6">
+            <h3 class="font-bold text-forest-green mb-2">New Members Welcome!</h3>
+            <p class="text-gray-700">
+              Whether you're completely new to cybersecurity or have years of experience,
+              we'd love to have you join us. No prerequisites required!
+            </p>
+          </div>
+        </div>
+
+        <!-- Quick Links & FAQs -->
+        <div>
+          <h2 class="text-2xl font-bold text-forest-green mb-6">Quick Links</h2>
+
+          <div class="space-y-4 mb-12">
+            <a
+              href="https://discord.gg/yeBQJuk3yf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-forest-green"
+            >
+              <h3 class="font-bold text-forest-green mb-1">Join Our Discord Server</h3>
+              <p class="text-sm text-gray-600">Connect with members, get help, and stay updated on events</p>
+            </a>
+
+            <a
+              href="/about"
+              class="block bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-forest-green"
+            >
+              <h3 class="font-bold text-forest-green mb-1">Learn More About Us</h3>
+              <p class="text-sm text-gray-600">Our mission, activities, and meeting schedule</p>
+            </a>
+          </div>
+
+          <h2 class="text-2xl font-bold text-forest-green mb-6">Frequently Asked Questions</h2>
+
+          <div class="space-y-4">
+            <div class="bg-white p-4 rounded-lg shadow-md">
+              <h3 class="font-bold text-gray-900 mb-2">Do I need prior experience?</h3>
+              <p class="text-sm text-gray-600">
+                Not at all! We welcome members of all skill levels. We have resources and
+                mentors to help beginners get started.
+              </p>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow-md">
+              <h3 class="font-bold text-gray-900 mb-2">Are there membership fees?</h3>
+              <p class="text-sm text-gray-600">
+                No, membership is completely free. All our workshops and events are open
+                to all students at no cost.
+              </p>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow-md">
+              <h3 class="font-bold text-gray-900 mb-2">How do I join?</h3>
+              <p class="text-sm text-gray-600">
+                Just show up to one of our meetings or join our Discord server. We'll get
+                you set up with all the resources you need.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

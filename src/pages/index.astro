@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Home">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-forest-green to-dark-forest text-white py-20">
+    <div class="container mx-auto px-4 text-center">
+      <img src="/logo.png" alt="Sacramento State Cyber Security Club" class="w-56 h-56 mx-auto mb-8 object-contain" />
+      <h1 class="text-5xl font-bold mb-4">Sacramento State <span class="text-light-gold">Cyber Security Club</span></h1>
+      <p class="text-xl mb-8 text-pale-gold">Hack. Learn. Compete. Defend.</p>
+      <p class="text-lg max-w-2xl mx-auto mb-8">
+        Join Sacramento State's community of cybersecurity enthusiasts dedicated to learning ethical hacking,
+        competing in CTF challenges, and building practical security skills.
+      </p>
+      <a
+        href="https://discord.gg/yeBQJuk3yf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block bg-light-gold text-dark-forest px-8 py-3 rounded-lg font-semibold hover:bg-pale-gold transition-colors"
+      >
+        Join Our Discord
+      </a>
+    </div>
+  </section>
+
+  <!-- What We Do Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12 text-forest-green">What We Do</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-forest-green">
+          <div class="text-light-gold text-4xl mb-4">🔐</div>
+          <h3 class="text-xl font-bold mb-3 text-forest-green">CTF Competitions</h3>
+          <p class="text-gray-600">
+            Participate in Capture The Flag competitions and test your skills against challenges
+            in web exploitation, cryptography, forensics, and more.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-forest-green">
+          <div class="text-light-gold text-4xl mb-4">🎓</div>
+          <h3 class="text-xl font-bold mb-3 text-forest-green">Workshops & Training</h3>
+          <p class="text-gray-600">
+            Hands-on workshops covering penetration testing, reverse engineering, network security,
+            and other essential cybersecurity skills.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-forest-green">
+          <div class="text-light-gold text-4xl mb-4">📝</div>
+          <h3 class="text-xl font-bold mb-3 text-forest-green">Writeups & Resources</h3>
+          <p class="text-gray-600">
+            Detailed writeups of CTF challenges, tutorials, and curated resources to help you
+            level up your cybersecurity knowledge.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Events Section -->
+  <section class="bg-gray-100 py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12 text-forest-green">Upcoming Events</h2>
+      <div class="max-w-3xl mx-auto space-y-6">
+        <div class="bg-white p-6 rounded-lg shadow-md flex items-start border-l-4 border-light-gold">
+          <div class="bg-light-gold text-dark-forest rounded-lg p-3 mr-4">
+            <div class="text-center">
+              <div class="text-2xl font-bold">08</div>
+              <div class="text-xs">FEB</div>
+            </div>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-xl font-bold text-forest-green mb-2">WRCCDC Qualifier Round</h3>
+            <p class="text-gray-600 mb-2">Compete in the Western Regional Collegiate Cyber Defense Competition qualifier. Defend your network against live attacks!</p>
+            <p class="text-sm text-gray-500 mb-2">🕐 All Day - Virtual Event</p>
+            <a href="https://wrccdc.org/" target="_blank" rel="noopener noreferrer" class="text-sm text-forest-green hover:text-dark-forest font-semibold">
+              Learn More →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

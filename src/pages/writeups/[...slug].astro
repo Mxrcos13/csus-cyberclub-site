@@ -1,0 +1,114 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const writeups = await getCollection('writeups');
+  return writeups.map((writeup) => ({
+    params: { slug: writeup.slug },
+    props: { writeup },
+  }));
+}
+
+const { writeup } = Astro.props;
+const { Content } = await writeup.render();
+
+const categoryColors = {
+  web: 'bg-blue-100 text-blue-800',
+  crypto: 'bg-purple-100 text-purple-800',
+  pwn: 'bg-red-100 text-red-800',
+  reverse: 'bg-green-100 text-green-800',
+  forensics: 'bg-yellow-100 text-yellow-800',
+  misc: 'bg-gray-100 text-gray-800',
+};
+
+const difficultyColors = {
+  easy: 'text-green-600',
+  medium: 'text-yellow-600',
+  hard: 'text-red-600',
+};
+---
+
+<Layout title={writeup.data.title} description={writeup.data.description}>
+  <article class="py-16">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <!-- Back button -->
+      <a
+        href="/writeups"
+        class="inline-flex items-center text-forest-green hover:text-dark-forest mb-8 transition-colors"
+      >
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+        </svg>
+        Back to Writeups
+      </a>
+
+      <!-- Header -->
+      <header class="mb-8">
+        <div class="flex flex-wrap items-center gap-3 mb-4">
+          <span class={`px-3 py-1 rounded-full text-sm font-semibold ${categoryColors[writeup.data.category]}`}>
+            {writeup.data.category.toUpperCase()}
+          </span>
+          <span class={`font-semibold ${difficultyColors[writeup.data.difficulty]}`}>
+            {writeup.data.difficulty.charAt(0).toUpperCase() + writeup.data.difficulty.slice(1)}
+          </span>
+          {writeup.data.ctf && (
+            <span class="text-gray-600 text-sm">🏆 {writeup.data.ctf}</span>
+          )}
+        </div>
+
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">{writeup.data.title}</h1>
+
+        <div class="flex items-center text-gray-600 mb-4">
+          <span>By <span class="font-semibold text-forest-green">{writeup.data.author}</span></span>
+          <span class="mx-3">•</span>
+          <time datetime={writeup.data.pubDate.toISOString()}>
+            {writeup.data.pubDate.toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </time>
+        </div>
+
+        {writeup.data.tags && writeup.data.tags.length > 0 && (
+          <div class="flex flex-wrap gap-2">
+            {writeup.data.tags.map((tag) => (
+              <span class="text-sm bg-gray-100 text-gray-600 px-3 py-1 rounded-full">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+      </header>
+
+      <!-- Content -->
+      <div class="prose prose-lg max-w-none
+        prose-headings:text-forest-green
+        prose-a:text-forest-green prose-a:no-underline hover:prose-a:text-dark-forest
+        prose-code:text-red-600 prose-code:bg-gray-100 prose-code:px-1 prose-code:py-0.5 prose-code:rounded
+        prose-pre:bg-gray-900 prose-pre:text-gray-100
+        prose-img:rounded-lg prose-img:shadow-md
+        prose-strong:text-gray-900
+      ">
+        <Content />
+      </div>
+
+      <!-- Footer -->
+      <footer class="mt-12 pt-8 border-t border-gray-200">
+        <div class="bg-pale-gold border-l-4 border-light-gold p-6 rounded-lg">
+          <h3 class="font-bold text-forest-green mb-2">Found this helpful?</h3>
+          <p class="text-gray-700 mb-3">
+            Join CyberClub to learn more, participate in CTFs, and connect with other cybersecurity enthusiasts!
+          </p>
+          <a
+            href="/contact"
+            class="inline-block bg-forest-green text-white px-6 py-2 rounded-lg font-semibold hover:bg-dark-forest transition-colors"
+          >
+            Get Involved
+          </a>
+        </div>
+      </footer>
+    </div>
+  </article>
+</Layout>
